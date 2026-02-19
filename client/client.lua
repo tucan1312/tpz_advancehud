@@ -1,3 +1,11 @@
+--[[
+    TPZ Advanced HUD
+    Copyright (c) 2024 tucan1312
+    Licensed under the MIT License
+    See LICENSE file in the project root for full license information.
+--]]
+
+
 local horseVisible = false
 local hudEditing = false
 local playerData = { money = 0, gold = 0, blackmoney = 0, job = "Citizen", jobGrade = "" }
