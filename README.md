@@ -32,3 +32,7 @@ Extract the folder into your resources directory.
 Add ensure tpz_advancehud to your server.cfg.
 
 Configure your settings in config.lua (e.g., toggle HidePlayersCore or BodyTemp).
+
+
+
+<img width="354" height="974" alt="image" src="https://github.com/user-attachments/assets/84d17ba9-b437-4f54-94b7-82e53b788ed2" />
