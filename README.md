@@ -38,3 +38,5 @@ Configure your settings in config.lua (e.g., toggle HidePlayersCore or BodyTemp)
 <img width="1919" height="510" alt="image" src="https://github.com/user-attachments/assets/27af20d4-20e6-4a48-8933-14d473922390" />
 
 <img width="1902" height="1079" alt="image" src="https://github.com/user-attachments/assets/80c62327-d9b0-47c9-a306-dfcbb47761bb" />
+
+<img width="618" height="412" alt="image" src="https://github.com/user-attachments/assets/1da0077d-bd14-49fd-a840-c749a4c3afda" />
