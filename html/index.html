@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<button id="save-layout-btn" style="display:none;">SAVE LAYOUT</button>
+
+<div id="settings-panel">
+    <div class="menu-header">HUD CUSTOMIZATION</div>
+    
+    <div class="setting-section-title">GLOBAL</div>
+
+    <div class="setting-item">
+        <label>Master HUD Display</label>
+        <button class="master-toggle" id="master-display"></button>
+    </div>
+
+    <div class="setting-item">
+        <label>Global Scale</label>
+        <input type="range" id="hud-scale" min="0.5" max="1.5" step="0.05" value="1.0">
+    </div>
+
+    <div class="setting-item">
+        <span>Cinematic View</span>
+        <button id="cinematic-btn">Cinematic</button>
+        
+    </div>
+
+    <div class="setting-item">
+        <label>Edit Layout</label>
+        <button id="start-layout">LAYOUT MODE</button>
+    </div>
+
+    <div id="leveling-settings-group">
+        <div class="setting-section-title">SKILLS</div>
+        <div class="element-row" data-target=".lumberjack-item"><span>Lumberjack</span><button class="toggle-visible"></button><input type="range" class="el-scale" min="0.5" max="1.5" step="0.1" value="1.0"><input type="color" class="el-color" value="#ffffff"></div>
+        <div class="element-row" data-target=".mining-item"><span>Mining</span><button class="toggle-visible"></button><input type="range" class="el-scale" min="0.5" max="1.5" step="0.1" value="1.0"><input type="color" class="el-color" value="#ffffff"></div>
+        <div class="element-row" data-target=".hunting-item"><span>Hunting</span><button class="toggle-visible"></button><input type="range" class="el-scale" min="0.5" max="1.5" step="0.1" value="1.0"><input type="color" class="el-color" value="#ffffff"></div>
+        <div class="element-row" data-target=".fishing-item"><span>Fishing</span><button class="toggle-visible"></button><input type="range" class="el-scale" min="0.5" max="1.5" step="0.1" value="1.0"><input type="color" class="el-color" value="#ffffff"></div>
+        <div class="element-row" data-target=".farming-item"><span>Farming</span><button class="toggle-visible"></button><input type="range" class="el-scale" min="0.5" max="1.5" step="0.1" value="1.0"><input type="color" class="el-color" value="#ffffff"></div>
+    </div>
+
+
+    <div class="setting-section-title">ELEMENTS (Show | Size | Color)</div>
+    <div id="individual-controls">
+        <div class="element-row" data-target=".heart-item"><span>Health</span><button class="toggle-visible"></button><input type="range" class="el-scale" min="0.5" max="1.5" step="0.1" value="1.0"><input type="color" class="el-color" value="#ffffff"></div>
+        <div class="element-row" data-target=".stamina-item"><span>Stamina</span><button class="toggle-visible"></button><input type="range" class="el-scale" min="0.5" max="1.5" step="0.1" value="1.0"><input type="color" class="el-color" value="#ffffff"></div>
+        <div class="element-row" data-target=".hunger-item"><span>Hunger</span><button class="toggle-visible"></button><input type="range" class="el-scale" min="0.5" max="1.5" step="0.1" value="1.0"><input type="color" class="el-color" value="#ffffff"></div>
+        <div class="element-row" data-target=".thirst-item"><span>Thirst</span><button class="toggle-visible"></button><input type="range" class="el-scale" min="0.5" max="1.5" step="0.1" value="1.0"><input type="color" class="el-color" value="#ffffff"></div>
+        <div class="element-row" data-target=".stress-item"><span>Stress</span><button class="toggle-visible"></button><input type="range" class="el-scale" min="0.5" max="1.5" step="0.1" value="1.0"><input type="color" class="el-color" value="#ffffff"></div>
+        <div class="element-row" data-target=".alcohol-item"><span>Alcohol</span><button class="toggle-visible"></button><input type="range" class="el-scale" min="0.5" max="1.5" step="0.1" value="1.0"><input type="color" class="el-color" value="#ffffff"></div>
+      
+        <div class="element-row" data-target=".temp-item"><span>Temp</span><button class="toggle-visible"></button><input type="range" class="el-scale" min="0.5" max="1.5" step="0.1" value="1.0"><input type="colors" class="el-color" value="#ffffff"></div>
+        <div class="element-row" data-target=".voice-item"><span>Voice</span><button class="toggle-visible"></button><input type="range" class="el-scale" min="0.5" max="1.5" step="0.1" value="1.0"><input type="color" class="el-color" value="#ffffff"></div>
+        <div class="element-row" data-target=".horseheath-item"><span>Horse Heath</span><button class="toggle-visible"></button><input type="range" class="el-scale" min="0.5" max="1.5" step="0.1" value="1.0"><input type="color" class="el-color" value="#ffffff"></div>
+        <div class="element-row" data-target=".horsestamina-item"><span>Horse Stamina</span><button class="toggle-visible"></button><input type="range" class="el-scale" min="0.5" max="1.5" step="0.1" value="1.0"><input type="color" class="el-color" value="#ffffff"></div>
+
+        <div class="element-row" data-target=".server-logo"><span>Logo</span><button class="toggle-visible"></button><input type="range" class="el-scale" min="0.5" max="1.5" step="0.1" value="1.0"><input type="color" class="el-color" value="#ffffff"></div>
+    
+        <div class="element-row" data-target=".job-wrapper"><span>Job</span><button class="toggle-visible"></button><input type="range" class="el-scale" min="0.5" max="1.5" step="0.1" value="1.0"><input type="color" class="el-color" value="#ffffff"></div>
+        <div class="element-row" data-target=".player-id-wrapper"><span>ID</span><button class="toggle-visible"></button><input type="range" class="el-scale" min="0.5" max="1.5" step="0.1" value="1.0"><input type="color" class="el-color" value="#ffffff"></div>
+        <div class="element-row" data-target=".money-item"><span>Cash</span><button class="toggle-visible"></button><input type="range" class="el-scale" min="0.5" max="1.5" step="0.1" value="1.0"><input type="color" class="el-color" value="#ffffff"></div>
+        <div class="element-row" data-target=".gold-item"><span>Gold</span><button class="toggle-visible"></button><input type="range" class="el-scale" min="0.5" max="1.5" step="0.1" value="1.0"><input type="color" class="el-color" value="#ffffff"></div>
+        <div class="element-row" data-target=".blackmoney-item"><span>Black Money</span><button class="toggle-visible"></button><input type="range" class="el-scale" min="0.5" max="1.5" step="0.1" value="1.0"><input type="color" class="el-color" value="#ffffff"></div>
+    </div>
+
+    <button id="close-settings">CLOSE</button>
+</div>
+
+<body>
+
+
+    
+
+    <div id="hud-container">
+ 
+            
+        
+
+ 
+            <div class="server-logo">
+                <img src="img/rsx.png" alt="Server Logo">
+            </div>
+
+            <div class="job-wrapper">
+                <span id="job-label">Citizen</span>
+            </div>
+            
+            
+            <div class="player-id-wrapper">
+                ID: <span id="player-id-val">0</span>
+            </div>
+                
+        
+            <div class="money-item">
+                <span id="cash-val">$0</span>
+                <img src="img/money.png" class="money-icon">
+            </div>
+            <div class="gold-item">
+                <span id="gold-val">0</span>
+                <img src="img/gold.png" class="money-icon">
+            </div>
+            <div class="blackmoney-item">
+                <span id="black-val">0</span>
+                <img src="img/black_money.png" class="money-icon">
+            </div>
+   
+
+
+            <div class="heart-item">
+                <svg width="50" height="50">
+                    <circle class="bg" cx="25" cy="25" r="20"></circle>
+                    <circle id="hp" class="progress" cx="25" cy="25" r="20"></circle>
+                </svg>
+                <div class="icon"><img src="img/heart.png"></div>
+            </div>
+
+            <div class="stamina-item">
+                <svg width="50" height="50">
+                    <circle class="bg" cx="25" cy="25" r="20"></circle>
+                    <circle id="stamina" class="progress" cx="25" cy="25" r="20"></circle>
+                </svg>
+                <div class="icon"><img src="img/stamina.png"></div>
+            </div>
+
+            <div class="hunger-item">
+                <svg width="50" height="50">
+                    <circle class="bg" cx="25" cy="25" r="20"></circle>
+                    <circle id="hunger" class="progress" cx="25" cy="25" r="20"></circle>
+                </svg>
+                <div class="icon"><img src="img/hunger.png"></div>
+            </div>
+
+            <div class="thirst-item">
+                <svg width="50" height="50">
+                    <circle class="bg" cx="25" cy="25" r="20"></circle>
+                    <circle id="thirst" class="progress" cx="25" cy="25" r="20"></circle>
+                </svg>
+                <div class="icon"><img src="img/thirst.png"></div>
+            </div>
+
+            <div class="stress-item">
+                <svg width="50" height="50">
+                    <circle class="bg" cx="25" cy="25" r="20"></circle>
+                    <circle id="stress" class="progress" cx="25" cy="25" r="20"></circle>
+                </svg>
+                <div class="icon"><img src="img/stress.png"></div>
+            </div>
+
+            <div class="alcohol-item">
+                <svg width="50" height="50">
+                    <circle class="bg" cx="25" cy="25" r="20"></circle>
+                    <circle id="alcohol" class="progress" cx="25" cy="25" r="20"></circle>
+                </svg>
+                <div class="icon"><img src="img/alcohol.png"></div>
+            </div>
+
+            <div class="temp-item temp-wrapper">
+                <svg width="50" height="50">
+                    <circle class="bg" cx="25" cy="25" r="20"></circle>
+                </svg>
+                <div class="icon">
+                    <img id="temp-icon" src="img/temp.png">
+                </div>
+                <div id="temp-val" class="temp-text">0°C</div>
+            </div>
+
+            <div class="horseheath-item" id="horse-hp-box" style="display:none;">
+                <svg width="50" height="50">
+                    <circle class="bg" cx="25" cy="25" r="20"></circle>
+                    <circle id="horsehealth" class="progress" cx="25" cy="25" r="20"></circle>
+                </svg>
+                <div class="icon"><img src="img/horseheath.png"></div>
+            </div>
+
+            <div class="horsestamina-item" id="horse-stamina-box" style="display:none;">
+                <svg width="50" height="50">
+                    <circle class="bg" cx="25" cy="25" r="20"></circle>
+                    <circle id="horsestamina" class="progress" cx="25" cy="25" r="20"></circle>
+                </svg>
+                <div class="icon"><img src="img/horsestamina.png"></div>
+            </div>
+            
+            <div class="voice-item">
+                <svg width="50" height="50">
+                    <circle class="bg" cx="25" cy="25" r="20"></circle>
+                    <circle id="voice-level" class="progress" cx="25" cy="25" r="20"></circle>
+                </svg>
+                <div class="icon">
+                    <div id="voice-icon"></div>
+                </div>
+            </div>
+
+
+            <div id="lumberjack-item" class="lumberjack-item hud-item">
+                <svg width="50" height="50">
+                    <circle class="bg" cx="25" cy="25" r="20"></circle>
+                    <circle id="lumberjack-progress" class="progress" cx="25" cy="25" r="20"></circle>
+                </svg>
+             
+                <div class="icon">
+                  <img src="img/lumber.png">
+                </div>
+                <div id="lumberjack-level" class="temp-text">0</div>
+            </div>
+
+            <div id="mining-item" class="mining-item hud-item">
+                <svg width="50" height="50">
+                    <circle class="bg" cx="25" cy="25" r="20"></circle>
+                    <circle id="mining-progress" class="progress" cx="25" cy="25" r="20"></circle>
+                </svg>
+             
+                <div class="icon">
+                  <img src="img/miner.png">
+                </div>
+                <div id="mining-level" class="temp-text">0</div>
+            </div>
+
+            <div id="hunting-item" class="hunting-item hud-item">
+                <svg width="50" height="50">
+                    <circle class="bg" cx="25" cy="25" r="20"></circle>
+                    <circle id="hunting-progress" class="progress" cx="25" cy="25" r="20"></circle>
+                </svg>
+             
+                <div class="icon">
+                  <img src="img/hunting.png">
+                </div>
+                <div id="hunting-level" class="temp-text">0</div>
+            </div>
+
+            <div id="fishing-item" class="fishing-item hud-item">
+                <svg width="50" height="50">
+                    <circle class="bg" cx="25" cy="25" r="20"></circle>
+                    <circle id="fishing-progress" class="progress" cx="25" cy="25" r="20"></circle>
+                </svg>
+             
+                <div class="icon">
+                  <img src="img/fishing.png">
+                </div>
+                <div id="fishing-level" class="temp-text">0</div>
+            </div>
+
+            <div id="farming-item" class="farming-item hud-item">
+                <svg width="50" height="50">
+                    <circle class="bg" cx="25" cy="25" r="20"></circle>
+                    <circle id="farming-progress" class="progress" cx="25" cy="25" r="20"></circle>
+                </svg>
+             
+                <div class="icon">
+                  <img src="img/farming.png">
+                </div>
+                <div id="farming-level" class="temp-text">0</div>
+            </div>
+     
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
