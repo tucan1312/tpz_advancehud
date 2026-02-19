@@ -39,33 +39,42 @@ end)
 
 
 
-local githubUser = "tucan1312" 
+local function compareVersions(v1, v2)
+    local a, b = {}, {}
+    for num in string.gmatch(v1, "%d+") do table.insert(a, tonumber(num)) end
+    for num in string.gmatch(v2, "%d+") do table.insert(b, tonumber(num)) end
+    for i = 1, math.max(#a, #b) do
+        local x, y = a[i] or 0, b[i] or 0
+        if x < y then return true end
+        if x > y then return false end
+    end
+    return false
+end
 
 AddEventHandler('onResourceStart', function(resourceName)
-    -- Only check for your specific HUD script
     if resourceName ~= GetCurrentResourceName() then return end
 
-    PerformHttpRequest('https://raw.githubusercontent.com/'..githubUser..'/' .. resourceName .. '/main/version.txt', function(err, latestVersion, headers)
-        local currentVersion = GetResourceMetadata(resourceName, 'version')
+    local githubUser = "tucan1312"
+    local url = ('https://raw.githubusercontent.com/%s/%s/main/version.txt'):format(githubUser, resourceName)
+
+    PerformHttpRequest(url, function(err, latestVersion, headers)
+        local currentVersion = GetResourceMetadata(resourceName, 'version') 
         
-        if not latestVersion then 
-            print('^3['.. resourceName..'] Version check failed (GitHub down?)^7')
-            return 
-        end
+        if err == 200 and latestVersion then
+            local cleanLatest = latestVersion:gsub("%s+", "")
+            local cleanCurrent = currentVersion:gsub("%s+", "")
 
-        -- Clean up strings (removes invisible characters/newlines)
-        currentVersion = currentVersion:gsub("%s+", "")
-        latestVersion = latestVersion:gsub("%s+", "")
-
-        if isOutdated(currentVersion, latestVersion) then
-            print('^1---------------------------------------------------------------^7')
-            print('^5['.. resourceName..']^7 is ^1OUTDATED^7!')
-            print('^5Current:^7 ^1'..currentVersion..'^7')
-            print('^5Latest:^7  ^2'..latestVersion..'^7')
-            print('^5Download:^7 https://github.com/'..githubUser..'/'..resourceName)
-            print('^1---------------------------------------------------------------^7')
+            if compareVersions(cleanCurrent, cleanLatest) then
+                print('^1---------------------------------------------------------------^7')
+                print(string.format("^5[%s]^7 is ^1OUTDATED^7!", resourceName))
+                print(string.format("^5Current:^7 ^1%s^7 | ^5Latest:^7 ^2%s^7", cleanCurrent, cleanLatest))
+                print(string.format("^5Download:^7 https://github.com/%s/%s", githubUser, resourceName))
+                print('^1---------------------------------------------------------------^7')
+            else
+                print(string.format("^2[%s] Running latest version (v%s)^7", resourceName, cleanCurrent))
+            end
         else
-            print('^5['.. resourceName..']^7 is up to date (^2v'..currentVersion..'^7).')
+            print("^3["..resourceName.."] Version check failed. HTTP: "..err.." (Check version.txt on GitHub)^7")
         end
     end)
 end)
