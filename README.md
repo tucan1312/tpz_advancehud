@@ -3,8 +3,6 @@ Dynamic Status Bars: Real-time tracking of Health, Stamina, Hunger, Thirst, Stre
 
 Environmental Temperature: Calculates temperature based on world coordinates and adds bonuses based on current clothing (Configurable).
 
-Horse HUD: Automatically detects when a player is mounted and displays Horse Health and Stamina.
-
 Cinematic Mode: One-click immersive mode that hides all UI elements and adds cinematic black bars.
 
 Voice Integration: Fully compatible with pma-voice. Features visual feedback for talking status and voice proximity ranges (Whisper/Normal/Shout).
@@ -36,3 +34,7 @@ Configure your settings in config.lua (e.g., toggle HidePlayersCore or BodyTemp)
 
 
 <img width="354" height="974" alt="image" src="https://github.com/user-attachments/assets/84d17ba9-b437-4f54-94b7-82e53b788ed2" />
+
+<img width="1919" height="510" alt="image" src="https://github.com/user-attachments/assets/27af20d4-20e6-4a48-8933-14d473922390" />
+
+<img width="1902" height="1079" alt="image" src="https://github.com/user-attachments/assets/80c62327-d9b0-47c9-a306-dfcbb47761bb" />
