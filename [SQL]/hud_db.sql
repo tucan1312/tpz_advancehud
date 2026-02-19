@@ -1,0 +1,1 @@
+ALTER TABLE `characters` ADD COLUMN `hud_settings` LONGTEXT DEFAULT NULL;
