@@ -1,3 +1,12 @@
+--[[
+    TPZ Advanced HUD
+    Copyright (c) 2024 tucan1312
+    Licensed under the MIT License
+    See LICENSE file in the project root for full license information.
+--]]
+
+
+
 local TPZ = exports.tpz_core:getCoreAPI()
 
 -- SAVE DATA
@@ -75,4 +84,5 @@ AddEventHandler('onResourceStart', function(resourceName)
             print("^3["..resourceName.."] Version check failed. HTTP: "..err.." (Check version.txt on GitHub)^7")
         end
     end)
+
 end)
