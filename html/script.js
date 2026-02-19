@@ -123,17 +123,20 @@ $(document).ready(function() {
 
         $(dragTargets.join(", ")).each(function() {
             const el = $(this);
+            const currentScale = $('.element-row[data-target=".' + el.attr('class').split(' ')[0] + '"]').find('.el-scale').val() || 1;
+
             el.draggable({
                 enabled: true,
                 containment: "window",
                 scroll: false,
                 start: function(event, ui) {
                     el.css({
-                        'transform': 'none', 
+                        'transform': 'scale(' + currentScale + ')', 
                         'bottom': 'auto',
                         'right': 'auto',
                         'margin': '0',
-                        'position': 'fixed' 
+                        'position': 'fixed',
+                        'transform-origin': 'center' 
                     });
                 }
             });
@@ -376,4 +379,5 @@ function updateCircle(id, value, max, reverse) {
         circle.style.stroke = savedColor;
         circle.style.fill = "none"; 
     }
+
 }
